@@ -1,48 +1,108 @@
 \usepackage[light]{FiraSans} % Normal font is given by /firabook
+\usepackage[T1]{fontenc}
 \ProvidesPackage{beamerthemeblob}
 
 \mode<presentation>
 
+% ══════════════════════════════════════════
 % Make the template as barebones as possible
+% ══════════════════════════════════════════
 \setbeamersize{text margin left=0.1\paperwidth, text margin right=0.1\paperwidth}%
 \setbeamertemplate{navigation symbols}{}
 
- % Colors
-\definecolor{background}{RGB}{238,244,222}
-\definecolor{accent}{RGB}{0,0,0}
+% ══════════════════════════════════════════
+% Colors
+% ══════════════════════════════════════════
+% First define some cool colors
+\definecolor{light}{HTML}{E0E0E0}
+\definecolor{accent}{HTML}{7FBAC7}
+\definecolor{dark}{HTML}{000000}
 
-% Background Color
-\setbeamercolor{background canvas}{bg=background}
+% Now set up the colors here 
+\setbeamercolor{normal text}      {fg=dark}
+\setbeamercolor{accent text}      {fg=accent}
+\setbeamercolor{invert text}      {fg=light}
+\setbeamercolor{contrast text}    {fg=dark}   % Text that contrasts the accent
 
+% Title page colors 
+\setbeamercolor{title}            {fg=dark}
+\setbeamercolor{subtitle}         {fg=dark}
+\setbeamercolor{author}           {fg=dark}
+\setbeamercolor{institute}        {fg=dark}
+\setbeamercolor{date}             {fg=dark}
+
+% Background colors
+\setbeamercolor{background}       {bg=light}
+\setbeamercolor{invert background}{bg=dark}
+\setbeamercolor{accent background}{bg=accent}
+\setbeamercolor{background canvas}{bg=light}
+
+% Colors for typical slide elements 
+\setbeamercolor{frametitle}       {fg=dark}
+\setbeamercolor{framesubtitle}    {fg=dark}
+
+% ══════════════════════════════════════════
+% Fonts
+% ══════════════════════════════════════════
+% Title page fonts
+\setbeamerfont{title}             {size=\Huge,          series=\bfseries}
+\setbeamerfont{subtitle}          {size=\small,         series=\mdseries}
+\setbeamerfont{institute}         {size=\scriptsize,    series=\bfseries, shape=\itshape}
+\setbeamerfont{date}              {size=\scriptsize,    series=\mdseries, shape=\itshape}
+
+% General frame fonts
+\setbeamerfont{frametitle}        {size=\Large,         series=\bfseries}
+\setbeamerfont{framesubtitle}     {size=\scriptsize,    series=\mdseries, shape=\itshape}
+
+% ══════════════════════════════════════════
 % Title Page
+% ══════════════════════════════════════════
 \setbeamertemplate{title page}{
   \begin{minipage}[t][0.8\textheight][t]{0.7\textwidth}%
     \raggedright
     \vspace{0.15\textheight}%
-    {\Huge\bfseries\MakeUppercase{\inserttitle}\par}%
+    {\usebeamercolor[fg]{title}\color{fg}\usebeamerfont{title}\MakeUppercase{\inserttitle}\par}%
     \vfill
-    {\small\fontseries{l}\selectfont\insertsubtitle\par}%
+    {\usebeamercolor[fg]{subtitle}\color{fg}\usebeamerfont{subtitle}\insertsubtitle\par}%
     \vspace{0.5em}
-    {\scriptsize\bfseries\itshape\insertinstitute}
-    {\scriptsize\itshape\insertdate\par}%
+    {\usebeamercolor[fg]{institute}\color{fg}\usebeamerfont{institute}\insertinstitute}
+    {\usebeamercolor[fg]{date}\color{fg}\usebeamerfont{date}\insertdate\par}%
   \end{minipage}%
   \vspace{0.1\textheight}%
 }
 
+% ══════════════════════════════════════════
 % Accent frame 
+% ══════════════════════════════════════════
 \newenvironment{accentframe}[2]{%
   \setbeamercolor{background canvas}{bg=accent}%
+  \usebeamercolor{contrast text}
   \begin{frame}[plain]%
     \begin{minipage}[t][0.8\textheight][t]{\textwidth}%
       \vspace{0.1\paperwidth}%
       \begin{minipage}{\textwidth}
         \raggedright
-        {\fontsize{48}{52}\selectfont\bfseries\color{background}\MakeUppercase{#1}\par}%
+        {\fontsize{48}{52}\selectfont\bfseries\color{fg}\MakeUppercase{#1}\par}%
         \vspace{1.2em}%
-        {\large\color{background}#2\par}%
+        {\large\color{fg}#2\par}%
       \end{minipage}%
     \end{minipage}
   \end{frame}%
-  \setbeamercolor{background canvas}{bg=background}%
 }{}
+
+
+% ══════════════════════════════════════════
+% Titles and such
+% ══════════════════════════════════════════
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamertemplate{frametitle}{
+  \vspace{0.08\textwidth}
+  \begin{beamercolorbox}[wd=0.8\paperwidth]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle
+    \ifx\insertframesubtitle\empty\else
+      {\newline \usebeamercolor[fg]{framesubtitle}\color{fg}\usebeamerfont{framesubtitle}\insertframesubtitle}
+    \fi
+  \end{beamercolorbox}
+}
+
 \mode<all>
