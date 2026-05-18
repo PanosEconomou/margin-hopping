@@ -101,8 +101,8 @@
 % ══════════════════════════════════════════
 % Titles and such
 % ══════════════════════════════════════════
-\setbeamerfont{frametitle}{size=\large, series=\bfseries}
 \setbeamertemplate{frametitle}{
+  \nointerlineskip
   \vspace{0.08\textwidth}
   \begin{beamercolorbox}[wd=0.8\paperwidth]{frametitle}
     \usebeamerfont{frametitle}\insertframetitle
@@ -118,8 +118,10 @@
 % ══════════════════════════════════════════
 \setbeamertemplate{footline height}{2.5em}
 \setbeamertemplate{footline}{
-  \begin{beamercolorbox}[wd=\paperwidth, ht=2.5ex, dp=2ex, center]{dark}
+  \begin{beamercolorbox}[wd=\paperwidth, ht=2.5ex, dp=1ex, center]{dark}
+    \rule{\paperwidth}{0.1pt}
     \insertsectionnavigationhorizontal{0.8\paperwidth}{\hskip-.3cm}{\hskip-.3cm}
+    \vfill
   \end{beamercolorbox}
 }
 \mode<all>
