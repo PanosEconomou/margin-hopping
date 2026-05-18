@@ -1,0 +1,48 @@
+\usepackage[light]{FiraSans} % Normal font is given by /firabook
+\ProvidesPackage{beamerthemeblob}
+
+\mode<presentation>
+
+% Make the template as barebones as possible
+\setbeamersize{text margin left=0.1\paperwidth, text margin right=0.1\paperwidth}%
+\setbeamertemplate{navigation symbols}{}
+
+ % Colors
+\definecolor{background}{RGB}{238,244,222}
+\definecolor{accent}{RGB}{0,0,0}
+
+% Background Color
+\setbeamercolor{background canvas}{bg=background}
+
+% Title Page
+\setbeamertemplate{title page}{
+  \begin{minipage}[t][0.8\textheight][t]{0.7\textwidth}%
+    \raggedright
+    \vspace{0.15\textheight}%
+    {\Huge\bfseries\MakeUppercase{\inserttitle}\par}%
+    \vfill
+    {\small\fontseries{l}\selectfont\insertsubtitle\par}%
+    \vspace{0.5em}
+    {\scriptsize\bfseries\itshape\insertinstitute}
+    {\scriptsize\itshape\insertdate\par}%
+  \end{minipage}%
+  \vspace{0.1\textheight}%
+}
+
+% Accent frame 
+\newenvironment{accentframe}[2]{%
+  \setbeamercolor{background canvas}{bg=accent}%
+  \begin{frame}[plain]%
+    \begin{minipage}[t][0.8\textheight][t]{\textwidth}%
+      \vspace{0.1\paperwidth}%
+      \begin{minipage}{\textwidth}
+        \raggedright
+        {\fontsize{48}{52}\selectfont\bfseries\color{background}\MakeUppercase{#1}\par}%
+        \vspace{1.2em}%
+        {\large\color{background}#2\par}%
+      \end{minipage}%
+    \end{minipage}
+  \end{frame}%
+  \setbeamercolor{background canvas}{bg=background}%
+}{}
+\mode<all>
