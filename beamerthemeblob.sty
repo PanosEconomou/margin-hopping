@@ -2,29 +2,10 @@
 \usepackage[T1]{fontenc}
 \usepackage{svg}
 \usepackage{tikz}
-\usepackage{xparse}
 
 \ProvidesPackage{beamerthemeblob}
 
 \mode<presentation>
-
-
-% ══════════════════════════════════════════
-% Some parameters set by the user
-% ══════════════════════════════════════════
-\def\titleimagefile{}
-\def\titleimagewidth{0.4\paperwidth}
-\def\titleimageanchor{north east}
-\def\titleimagexshift{0pt}
-\def\titleimageyshift{0pt}
-
-\NewDocumentCommand{\titleimage}{m O{0.4\paperwidth} O{north east} O{0pt} O{0pt}}{%
-  \def\titleimagefile{#1}%
-  \def\titleimagewidth{#2}%
-  \def\titleimageanchor{#3}%
-  \def\titleimagexshift{#4}%
-  \def\titleimageyshift{#5}%
-}
 
 % ══════════════════════════════════════════
 % Make the template as barebones as possible
@@ -76,27 +57,12 @@
 \setbeamerfont{frametitle}        {size=\Large,         series=\bfseries}
 \setbeamerfont{framesubtitle}     {size=\scriptsize,    series=\mdseries, shape=\itshape}
 
+% Footer
+\setbeamerfont{footline}          {size=\tiny}
+
 % ══════════════════════════════════════════
 % Title Page
 % ══════════════════════════════════════════
-\def\titlepage{%
-  \setbeamertemplate{background}{%
-    \typeout{RENDERING}
-    \ifx\titleimagefile\@empty\else
-  \typeout{titleimagefile = \titleimagefile}
-      \begin{tikzpicture}[remember picture, overlay]
-        \node[anchor=\titleimageanchor,
-              xshift=\titleimagexshift,
-              yshift=\titleimageyshift] at (current page.\titleimageanchor) {%
-          \includesvg[width=\titleimagewidth]{\titleimagefile}%
-        };
-      \end{tikzpicture}%
-    \fi%
-  }%
-  \usebeamertemplate{title page}%
-  \setbeamertemplate{background}{}%
-}
-
 \setbeamertemplate{title page}{
   \begin{minipage}[t][0.8\textheight][t]{0.7\textwidth}%
     \raggedright
@@ -145,4 +111,14 @@
   \end{beamercolorbox}
 }
 
+
+% ══════════════════════════════════════════
+%  Bottom Navigation stuff
+% ══════════════════════════════════════════
+\setbeamertemplate{footline height}{2.5em}
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth, ht=2.5ex, dp=2ex, center]{dark}
+    \insertsectionnavigationhorizontal{0.8\paperwidth}{\hskip-.3cm}{\hskip-.3cm}
+  \end{beamercolorbox}
+}
 \mode<all>

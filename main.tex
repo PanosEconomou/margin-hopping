@@ -7,14 +7,18 @@
 \author{Panos Oikonomou}
 \institute{New York University}
 \date{\today}
-\titleimage{media/hopping-margin.svg}
 
 \begin{document}
 
-\begin{frame}
-  \titlepage
-\end{frame}
+% Set up the title slide with a custom background
+{
+  \setbeamertemplate{background}{\input{media/background}} 
+  \begin{frame}[plain]
+    \titlepage
+  \end{frame}
+}
 
+\section{Contents}
 \begin{frame}
   \frametitle{Contents}
   Hello everyone!
@@ -24,6 +28,7 @@
 \begin{accentframe}{Hopping to Where?}{Here are some accent slides}
 \end{accentframe}
 
+\section{More stuff}
 \begin{frame}
   \frametitle{Contents}
   \framesubtitle{A very detailed subtitle for this section}
