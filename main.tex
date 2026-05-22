@@ -19,40 +19,111 @@
 }
 % ════════════════════════════════════════════════════════════════
 
+
 \section{Motivation}
 \begin{frame}
-  \frametitle{Contents}
-  \framesubtitle{A very detailed subtitle for this section}
-  Hello everyone!
+  \frametitle{What is a conformal defect?}
+  \framesubtitle{A cool motivating example}
 \end{frame}
 
-\subsection{Renormalization Group Flow}
-\subsection{Condensed Matter}
-\subsection{String Field Theory}
-
-\section{How to Hop}
-\begin{accentframe}{How to hop?}{Here are some accent slides}\end{accentframe}
 \begin{frame}
-  \frametitle{Approach 1}
-  \framesubtitle{Calculate all Conformal Defects}
-  \textbf{Step 1 | }Calculate all conformal Defects in your theory\par
-  \textbf{Step 2 | }One of them is bound to be your fixed point
+  \frametitle{Why RG moves the defect?}
+  \framesubtitle{Studying critical points of this flow is interesting}
 \end{frame}
 
-\subsection{What should be preserved?}
-\subsection{Folding}
+\section{Finding Fixed Points}
+\begin{frame}
+  \frametitle{Ways to find Fixed points}
+\end{frame}
 
-\section{Boundary CFT}
-\subsection{Cardy Boundaries}
-\subsection{Gauging}
-\subsection{More boundaries through fusion}
+\begin{frame}
+  \frametitle{Defects are unfolded boundaries}
+\end{frame}
+
+\section{Checking Defects}
+\begin{frame}
+  \frametitle{g-function}
+  \framesubtitle{Easy to compute \& a-theorem esque}
+  Let's try to characterize the fixed point with a regulator independent quantity. 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Preserved Symmetries}
+\end{frame}
+
+\section{Generate Defects}
+\begin{frame}
+  \frametitle{Cardy Trick}
+  \framesubtitle{A cheecky way to generate boundaries}
+  A finite cylinder can be chopped off in two ways.\par
+  <Place images of the cylinder>
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cardy Trick}
+  \framesubtitle{A cheecky way to generate boundaries}
+  Therefore the partition functions are related by\par
+  <Image of partition function decompositions into traces>
+  \begin{equation}
+    \text{Tr\,}_{\mathbb{H}} e^{-2\pi L H} \alpha \beta^\dagger = Z(\tau) = \text{Tr\,}_{\mathbb{H}_{\alpha \beta}}e^{2\pi i P}
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cardy Trick}
+  \framesubtitle{A cheecky way to generate boundaries}
+  We can then project into an annulus\par
+  <Map to annulus>
+  \begin{equation}
+    Z(\tau) = \langle \beta, q^{\frac{1}{2} \left(L_0 + \bar L_0 - \frac{c}{12} \right)} \alpha \rangle
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cardy Trick}
+  \framesubtitle{A cheecky way to generate boundaries}
+  But also an upper half plane\par
+  <map to upper half plane>
+  \begin{equation}
+    Z(\tau) = \text{Tr\,}_{\mathbb{H}_{\alpha \beta}} \tilde q^{L_0 - \frac{c}{24}}
+  \end{equation}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Cardy Trick}
+  \framesubtitle{A cheecky way to generate boundaries}
+  Matching the two conditions and expressing into characters we find that
+  \begin{equation}
+    S_{ij} \alpha_i \beta_j = n^{\alpha \beta}_{i}
+  \end{equation}
+  Please write this correctly oml.
+  Which has solutions
+  \begin{equation}
+    \alpha^i_j = \frac{S_{ij}}{\sqrt{S_{i0}}}.
+  \end{equation} 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fusion}
+  \framesubtitle{Even more boundaries!}
+  If we know any topological defects, we can also fuse them with Cardy boundaries to obtain more boundaries.\par
+  To do this, we use \textbf{bootstrap}.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Gauging}
+  \framesubtitle{Even even more boundaries!}
+  There must be more boundaries that we can obtain through fusion.\par
+  The technique is to gauge and get more Cardy boundaries.
+\end{frame}
 
 \section{Future}
 \subsection{For this project}
-\subsection{For me}
 \begin{frame}
-  \frametitle{hi!}
+  \frametitle{Future}
 \end{frame}
+\subsection{For me}
 
 
 \end{document}
