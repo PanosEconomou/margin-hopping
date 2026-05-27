@@ -45,7 +45,7 @@
   \frametitle{Cardy Trick}
   \framesubtitle{A cheecky way to generate boundaries}
   A finite cylinder can be chopped off in two ways.\par
-  <Place images of the cylinder>
+  <Place images of the cylinder with boundaries $\alpha, \beta$>
 \end{frame}
 
 \begin{frame}
@@ -84,20 +84,24 @@
   \framesubtitle{A cheecky way to generate boundaries}
   Matching the two conditions and expressing into characters we find that
   \begin{equation}
-    S_{ij} \alpha_i \beta_j = n^{\alpha \beta}_{i}
+    S^{ji} \alpha_j \beta_j \chi_i(q) = n_{\alpha \beta}^{i} \chi_i(q)
   \end{equation}
-  Please write this correctly oml.
-  Which has solutions
+  Which has solutions for a diagonal CFT
   \begin{equation}
-    \alpha^i_j = \frac{S_{ij}}{\sqrt{S_{i0}}}.
+    \alpha_j = \frac{S_{\alpha j}}{\sqrt{S_{\alpha 0}}}.
   \end{equation} 
+  These are also a basis of simple physical boundaries. 
 \end{frame}
 
 \begin{frame}
   \frametitle{Fusion}
   \framesubtitle{Even more boundaries!}
   If we know any topological defects, we can also fuse them with Cardy boundaries to obtain more boundaries.\par
-  To do this, we use \textbf{bootstrap}.
+  \begin{equation}
+    \mathcal{L}\alpha = n_{\mathcal{L}\alpha}^{\beta} \beta,
+  \end{equation}
+  for $\beta$ simple physical boundary.
+  To do this, we use \textbf{modular bootstrap} to come up with topological lines.
 \end{frame}
 
 \begin{frame}
