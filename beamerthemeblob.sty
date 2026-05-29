@@ -1,9 +1,11 @@
 \usefonttheme{professionalfonts}
 \usepackage[light]{FiraSans} % Normal font is given by /firabook
 \usepackage[T1]{fontenc}
-
 \usepackage{tikz}
 \usepackage{svg}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage[absolute,overlay]{textpos}
 
 \ProvidesPackage{beamerthemeblob}
 
@@ -105,8 +107,7 @@
 % ══════════════════════════════════════════
 \setbeamertemplate{frametitle}{
   \nointerlineskip
-  \vspace{0.08\textwidth}
-  \begin{beamercolorbox}[wd=0.8\paperwidth]{frametitle}
+  \begin{beamercolorbox}[wd=0.8\paperwidth, ht=0.17\paperheight]{frametitle}
     \usebeamerfont{frametitle}\insertframetitle
     \ifx\insertframesubtitle\empty\else
       {\newline \usebeamercolor[fg]{framesubtitle}\color{fg}\usebeamerfont{framesubtitle}\insertframesubtitle}

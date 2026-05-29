@@ -1,6 +1,5 @@
 \documentclass[aspectratio=169]{beamer}
 \usetheme{blob}
-\usepackage{mathtools}
 
 \title{Hopping on the Margins}
 \subtitle{with Yifan Wang, and Quinten Weller}
@@ -42,7 +41,7 @@
   \framesubtitle{Reframing the problem in terms of Boundary CFT}
   In a theory $\mathcal{T}$ with conformal defect $\alpha$, 
   \includegraphics[width=\linewidth]{media/folding-defects.pdf}
-  Similar to
+  Similar to how a linear map
   \begin{equation}
     \alpha : \mathbb{H}\to \mathbb{H} \longleftrightarrow \ket{\alpha} : \mathbb{C}\to \mathbb{H} \otimes \mathbb{H}^\ast
   \end{equation}
@@ -79,40 +78,58 @@
 \begin{frame}
   \frametitle{Cardy Trick}
   \framesubtitle{A cheeky way to generate boundaries}
-  A finite cylinder can be chopped off in two ways.\par
-  <Place images of the cylinder with boundaries $\alpha, \beta$>
-\end{frame}
-
-\begin{frame}
-  \frametitle{Cardy Trick}
-  \framesubtitle{A cheeky way to generate boundaries}
-  Therefore the partition functions are related by\par
-  <Image of partition function decompositions into traces>
+  \centering
+  \includegraphics[width=0.9\linewidth]{media/open-closed-string-duality.pdf}
   \begin{equation}
-    \langle \alpha, e^{-2\pi L H_{A}} \beta\rangle = Z(\tau) = \mathrm{Tr\,}_{\mathbb{H}_{\alpha \beta}}e^{- \pi H_S}
+    \langle \alpha, e^{-\pi L H_{\tau}} \beta\rangle = Z(L) = \mathrm{Tr\,}_{\mathbb{H}_{\alpha \beta}}e^{- 2\pi H_\sigma}
   \end{equation}
 \end{frame}
 
 \begin{frame}
   \frametitle{Cardy Trick}
   \framesubtitle{A cheeky way to generate boundaries}
-  We can then project into an annulus\par
-  <Map to annulus>
-  \begin{equation}
-    Z(\tau) = \langle \beta, q^{\frac{1}{2} \left(L_0 + \bar L_0 - \frac{c}{12} \right)} \alpha \rangle
-  \end{equation}
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \raggedright
+      We can project into an annulus with Hamiltonian
+      \begin{equation}
+        H_\tau = L_0 + \bar L_0 - \frac{c}{12},
+      \end{equation}
+      and partition function
+      \begin{equation}
+        Z(L) = \langle \alpha, e^{-\pi L \left(L_0 + \bar L_0 - \frac{c}{12} \right)} \beta \rangle.
+      \end{equation}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+    \end{column}
+    \begin{textblock*}{0.38\textwidth}(0.6\textwidth+0.15\paperwidth, 0.00\paperheight)
+      \includegraphics[width=\linewidth]{media/annulus.pdf}
+    \end{textblock*}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
   \frametitle{Cardy Trick}
   \framesubtitle{A cheeky way to generate boundaries}
-  But also an upper half plane\par
-  <map to upper half plane>
-\begin{equation}
-    Z(\tau) = \mathrm{Tr\,}_{\mathbb{H}_{\alpha \beta}} \tilde q^{L_0 - \frac{c}{24}}
-  \end{equation}
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \raggedright
+      But also onto an upper half plane with Hamiltonian
+      \begin{equation}
+        H_\sigma = -\frac{1}{L} \left(L_0  - \frac{c}{24}\right),
+      \end{equation}
+      and partition function
+      \begin{equation}
+        Z(L) = \mathrm{Tr}_{\mathbb{H}_{\alpha \beta}} e^{\frac{2\pi}{L} \left( L_0 - \frac{c}{12} \right)}.
+      \end{equation}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+    \end{column}
+    \begin{textblock*}{0.42\textwidth}(0.6\textwidth+0.14\paperwidth, 0.00\paperheight)
+      \includegraphics[width=\linewidth]{media/strip.pdf}
+    \end{textblock*}
+  \end{columns}
 \end{frame}
-
 
 \begin{frame}
   \frametitle{Cardy Trick}
@@ -206,13 +223,13 @@
   \frametitle{Current Status}
   \framesubtitle{Progress so far}
   \begin{enumerate}
-      \item Outline Numerical Results in Makabe + Watts.
-      \item Describe the conjectured and numerically justified gaugings from $\mathrm{TCI}^2$ to all modular invariants of the chiral algebras of $\mathcal{A}$ and $\mathcal{B}$.
-      \item Calculated Cardy states in $\mathcal{A}$ and shown that it has no defects consistent with numerical $g$ function estimation for $C$. 
-      \item Bootstrapped the TDLs in $\rm{TCI}^2$ that commute with the $\mathcal{A}$, and repeating for $\mathcal{B}$.
-      \item Working on identifying the smallest common chiral subalgebra in which all theories are rational.
+    \item Outline Numerical Results in Makabe + Watts.
+    \item Describe the conjectured and numerically justified gaugings from $\mathrm{TCI}^2$ to all modular invariants of the chiral algebras of $\mathcal{A}$ and $\mathcal{B}$.
+    \item Calculated Cardy states in $\mathcal{A}$ and shown that it has no defects consistent with numerical $g$ function estimation for $C$. 
+    \item Bootstrapped the TDLs in $\rm{TCI}^2$ that commute with the $\mathcal{A}$, and repeating for $\mathcal{B}$.
+    \item Working on identifying the smallest common chiral subalgebra in which all theories are rational.
   \end{enumerate}
-  
+
 \end{frame}
 \subsection{Future for me}
 
