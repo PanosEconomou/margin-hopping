@@ -1,5 +1,6 @@
 \documentclass[aspectratio=169]{beamer}
 \usetheme{blob}
+\usepackage[normalem]{ulem} 
 
 \title{Hopping on the Margins}
 \subtitle{with Yifan Wang, and Quinten Weller}
@@ -22,24 +23,72 @@
 
 \section{Motivation}
 \begin{frame}
-  \frametitle{What is a conformal defect?}
-  \framesubtitle{A cool motivating example}
+  \frametitle{Defects in the wild}
+  \framesubtitle{Using spin chains to pull out conformal defects}
   \begin{figure}
     \centering
-    \includegraphics[width=0.7\linewidth]{media/lattice}
+    \includegraphics[width=0.8\linewidth]{media/lattice.png}
+  \end{figure}
+  \begin{equation*}
+      H = -\sum_{n} J_n x_nx_{n+1} - \sum_{n}h_n z_n
+  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Defects in the wild}
+  \framesubtitle{Using spin chains to pull out conformal defects}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{media/lattice-defect.png}
+  \end{figure}
+  \begin{equation*}
+      H = -\sum_{n} J_n x_nx_{n+1} - \sum_{n}h_n z_n + \delta H_{01}
+  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Defects in the wild}
+  \framesubtitle{Using spin chains to pull out conformal defects}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{media/lattice-defect-full.png}
+  \end{figure}
+  \begin{equation*}
+      H = -\sum_{n} J_n x_nx_{n+1} - \sum_{n}h_n z_n + \delta H_{01}
+  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Defects in the wild}
+  \framesubtitle{Using spin chains to pull out conformal defects}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{media/lattice-defect-zoom-out.png}
+  \end{figure}
+  \begin{equation*}
+      H = -\sum_{n} J_n x_nx_{n+1} - \sum_{n}h_n z_n + \delta H_{01}
+  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Flowing with these defects}
+  \framesubtitle{But what about fixed points?}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{media/hopping-margin.pdf}
   \end{figure}
 \end{frame}
 
-\section{Finding Fixed Points}
-\begin{frame}
-  \frametitle{Ways to find fixed points}
-\end{frame}
+\begin{accentframe}{So what are the endpoints?}{Studying the endpoints of flows by hopping and hoping.}
+\end{accentframe}
 
+\section{Finding Fixed Points}
 \begin{frame}
   \frametitle{Chiral Algebras}
   \framesubtitle{The building blocks of a Conformal Field Theory}
   \centering
   \includegraphics[width=0.6\linewidth]{media/cft-vir-lego.png}
+  \pause
   \includegraphics[width=0.8\linewidth]{media/vir-primary.pdf}
 \end{frame}
 
@@ -51,6 +100,7 @@
   \includegraphics[width=0.8\linewidth]{media/w-primary.pdf}
 \end{frame}
 
+\setbeamercovered{transparent}
 \begin{frame}
   \frametitle{Defects are unfolded boundaries}
   \framesubtitle{Reframing the problem in terms of Boundary CFT}
@@ -59,6 +109,7 @@
       \centering
       \includegraphics[width=0.9\linewidth]{media/folding-defects.pdf}
   \end{figure}
+  \pause
   Similar to how a linear map
   \begin{equation}
     \alpha : \mathbb{H}\to \mathbb{H} \longleftrightarrow \ket{\alpha} : \mathbb{C}\to \mathbb{H} \otimes \mathbb{H}^\ast.
@@ -67,30 +118,60 @@
 
 \begin{frame}
   \frametitle{Characterizing Conformal Defects}
-  \framesubtitle{useful tools}
+  \framesubtitle{Useful tools}
   <Insert picture for Invariance under conformal transformations $\implies$ Invariance under translations along it $\implies$ Continuity of parallel momentum across it.>
   \begin{equation}
     T_{\rm{above}}(z) - \bar T_{\rm{above}}(\bar z) = 
     T_{\rm{below}}(z) - \bar T_{\rm{below}}(\bar z)
   \end{equation}
+  \pause
   For a boundary state $\alpha$ this translates to 
   \begin{equation}
-    (L_n - \bar L_{-n})\alpha = 0.
+    (L_n - \bar L_{-n})\ket{\alpha} = 0.
   \end{equation}
 \end{frame}
 
 \begin{frame}
   \frametitle{Characterizing Conformal Defects}
-  \framesubtitle{useful tools}
+  \framesubtitle{Useful tools}
   \begin{equation}
-    (L_n - \bar L_{-n})\alpha = 0,
+    (L_n - \bar L_{-n})\ket{\alpha} = 0,
   \end{equation}
-  implies that boundary states are built from spinless states. A basis for which is given by Ishibashi states $|i\rangle\!\rangle$ defined for a spinless primary $i$ by
-  \begin{equation}
+  \begin{itemize}
+      \item Boundary states are built from spinless primaries.
+      \pause
+      \item A basis for which is given by Ishibashi states $|i\rangle\!\rangle$ defined for a spinless primary $i$ by
+      \begin{equation}
     |i\rangle\!\rangle = \sum_{n} |i,n\rangle \otimes U |i,n\rangle,
-  \end{equation}
-  with $|i,n\rangle$ an orthonormal basis of the $i$ irrep, and $U$ fixed antiunitary map taking the lowest weight state to its charge conjugate, while preserving chiral current modes.
+  \end{equation}with $|i,n\rangle$ an orthonormal basis of the $i$ irrep, and $U$ fixed antiunitary map.
+  \end{itemize}
 \end{frame}
+
+\begin{frame}
+  \frametitle{Characterizing Conformal Defects}
+  \framesubtitle{Useful tools}
+  Therefore each boundary state should be given by 
+  \begin{equation}
+      \ket{\alpha} = \sum_{h_i = \bar h_i}\alpha_i|i\rangle\!\rangle,
+  \end{equation}
+  for some $\alpha_i \in \mathbb{C}$.
+\end{frame}
+
+\setbeamercovered{invisible}
+\begin{frame}
+  \frametitle{Strategy}
+  \framesubtitle{How can we then find fixed points?}
+  \begin{itemize}
+      \item \alt<2->{\textit{\color{fg!30}\sout{Calculate $\beta$ functions.}}}{Calculate $\beta$ functions.}
+      \pause
+      \item Find a way to generate conformal defects.
+      \pause
+      \item Use constraints to check which ones could be the fixed point.
+  \end{itemize}
+\end{frame}
+
+\begin{accentframe}{Finding Defect Builders}{A story of cheating using rational theories and gauging.}
+\end{accentframe}
 
 \section{Generate Defects}
 \begin{frame}
@@ -98,6 +179,7 @@
   \framesubtitle{A cheeky way to generate boundaries}
   \centering
   \includegraphics[width=0.9\linewidth]{media/open-closed-string-duality.pdf}
+  \pause
   \begin{equation}
     \langle \alpha, e^{-\pi L H_{\tau}} \beta\rangle = Z(L) = \mathrm{Tr\,}_{\mathbb{H}_{\alpha \beta}}e^{- 2\pi H_\sigma}
   \end{equation}
@@ -158,7 +240,7 @@
   \end{equation}
   Which has solutions for a diagonal CFT
   \begin{equation}
-    \alpha_j = \frac{S_{\alpha j}}{\sqrt{S_{\alpha 0}}},
+    \alpha_j = \frac{S_{\alpha j}}{\sqrt{S_{\alpha 1}}},
   \end{equation} 
   where $\alpha$ labels a primary. These are also a basis of simple physical boundaries. 
 \end{frame}
@@ -180,6 +262,9 @@
   There must be more boundaries that we can obtain through fusion.\par
   The technique is to gauge and get more Cardy boundaries.
 \end{frame}
+
+\begin{accentframe}{Generating Constraints}{Why should this be an endpoint?}
+\end{accentframe}
 
 \section{Checking Defects}
 \begin{frame}
@@ -232,16 +317,19 @@
   \end{equation}
   Such that $\mathrm{TIM}^2$ is still rational. Known ones are the chiral algebras of:
   \begin{align}
-    \mathcal{A} \coloneqq \frac{\mathrm{SU}(2)_8}{U(1)} && \mathcal{B} \coloneqq \frac{\mathrm{SU}(2)_2 \times \mathrm{SU}(2)_8}{\mathrm{SU}(2)_{10}}.
+    \mathcal{A} \coloneqq \frac{\mathrm{SU}(2)_8}{U(1)} && \mathcal{B} \coloneqq \frac{\mathrm{SU}(2)_2 \times \mathrm{SU}(2)_8}{\mathrm{SU}(2)_{10}} && \mathcal{C} \coloneqq \frac{\mathrm{Sp}(6)_1\times \mathrm{Sp}(6)_1}{\mathrm{Sp}(6)_2}.
   \end{align}
 \end{frame}
 
 \begin{frame}
   \frametitle{Strategy}
   \framesubtitle{Guesses for Gaugings}
-  Both $\mathcal{A}, \mathcal{B}$ are (rational) WZW cosets related to $\mathrm{TIM}^2$ by gauging. 
-
-  In subsequent gaugings we can (possibly/hopefully) find smaller algebras under which $\mathrm{TIM}^2$ is rational.
+  \begin{itemize}
+      \item $\mathcal{A}, \mathcal{B},$ and $\mathcal{C}$ are (rational) WZW cosets related to $\mathrm{TIM}^2$ by gauging. 
+      \item In subsequent gaugings we can (possibly/hopefully) find smaller algebras under which $\mathrm{TIM}^2$ is rational.
+      \item Pull out Cardy boundaries and use bootstrapped TDLs to obtain more.
+      \item Constrain defects based on $\mathrm{g}$-function preserved symmetry and more.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
