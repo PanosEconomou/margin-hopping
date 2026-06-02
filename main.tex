@@ -30,7 +30,7 @@
     \includegraphics[width=0.8\linewidth]{media/lattice.png}
   \end{figure}
   \begin{equation*}
-      H = -\sum_{n} J_n x_nx_{n+1} - \sum_{n}h_n z_n
+      H = -J\sum_{n} x_nx_{n+1} - h\sum_{n} z_n
   \end{equation*}
 \end{frame}
 
@@ -42,7 +42,7 @@
     \includegraphics[width=0.8\linewidth]{media/lattice-defect.png}
   \end{figure}
   \begin{equation*}
-      H = -\sum_{n} J_n x_nx_{n+1} - \sum_{n}h_n z_n + \delta H_{01}
+      H = -J\sum_{n} x_nx_{n+1} - h\sum_{n}z_n + \delta H_{01}
   \end{equation*}
 \end{frame}
 
@@ -54,7 +54,7 @@
     \includegraphics[width=0.8\linewidth]{media/lattice-defect-full.png}
   \end{figure}
   \begin{equation*}
-      H = -\sum_{n} J_n x_nx_{n+1} - \sum_{n}h_n z_n + \delta H_{01}
+      H = -J\sum_{n} x_nx_{n+1} - h\sum_{n}z_n + \delta H_{01}
   \end{equation*}
 \end{frame}
 
@@ -66,20 +66,83 @@
     \includegraphics[width=0.8\linewidth]{media/lattice-defect-zoom-out.png}
   \end{figure}
   \begin{equation*}
-      H = -\sum_{n} J_n x_nx_{n+1} - \sum_{n}h_n z_n + \delta H_{01}
+      H = -J\sum_{n} x_nx_{n+1} - h\sum_{n}z_n + \delta H_{01}
   \end{equation*}
 \end{frame}
 
 \begin{frame}
   \frametitle{Flowing with these defects}
-  \framesubtitle{But what about fixed points?}
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.6\linewidth]{media/hopping-margin.pdf}
-  \end{figure}
+  \framesubtitle{Chasing the next simplest case}
+  \begin{columns}
+    \begin{column}{0.1\paperwidth}
+    \end{column}
+    \begin{column}{0.35\paperwidth}
+      \begin{minipage}[t][0.34\paperwidth][t]{0.35\paperwidth}
+        \begin{figure}
+          \centering
+          \only<1>{\includegraphics[width=\linewidth]{media/tricritical-flows-1}}%
+          \only<2>{\includegraphics[width=\linewidth]{media/tricritical-flows-2}}%
+          \only<3>{\includegraphics[width=\linewidth]{media/tricritical-flows-3}}%
+          \only<4>{\includegraphics[width=\linewidth]{media/tricritical-flows-4}}%
+          \only<5>{\includegraphics[width=\linewidth]{media/tricritical-flows-5}}%
+        \end{figure}
+      \end{minipage}
+    \end{column}
+    \hspace{0.02\paperwidth}%
+    \begin{column}{0.45\paperwidth}%
+      \begin{minipage}[t][0.34\paperwidth][t]{\linewidth}
+        \raggedright
+        Consider $\mathcal{T} \coloneqq M(4,5)$\par 
+        \textbf{\textit{Tricritical Ising Model}}%
+        \vspace{0pt plus 1fill}%
+        \begin{equation*}%
+          \only<1>{S = S_D}%
+          \only<2>{S = S_D + \lambda_{\phi}\int_{D} \phi(z) dz}%
+          \only<3>{S = S_D + \lambda_{\bar \phi}\int_{D} \bar \phi(z) dz}%
+          \only<4>{S = S_D + \lambda\int_{D} \phi(z) + \bar \phi(z) dz}%
+          \only<5>{S = S_D + \lambda_{\phi}\int_{D} \phi(z) dz + \lambda_{\bar \phi}\int_{D} \bar \phi(z) dz}%
+        \end{equation*}
+        % \vspace{0pt plus 2fill}%
+        \vfill
+        \raggedleft
+        {\tiny Results from Watts, Runkel, and co.}
+      \end{minipage}
+    \end{column}
+    \hspace{0.07\paperwidth}
+  \end{columns}
 \end{frame}
 
-\begin{accentframe}{So what are the endpoints?}{Studying the endpoints of flows by hopping and hoping.}
+\begin{frame}
+  \frametitle{Outline}
+  \framesubtitle{The story so far}
+  \begin{columns}[t]
+    \begin{column}{0.22\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{media/widget-introduction}\\[1ex]
+      \tiny Motivation
+    \end{column}
+    \pause
+    \begin{column}{0.22\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{media/widget-background}\\[1ex]
+      \tiny Review how to describe conformal defects
+    \end{column}
+    \pause
+    \begin{column}{0.22\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{media/widget-strategy}\\[1ex]
+      \tiny Approach to finding fixed points
+    \end{column}
+    \pause
+    \begin{column}{0.22\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{media/widget-results}\\[1ex]
+      \tiny Progress and partial results
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{accentframe}{So Where are the endpoints?}{Studying the endpoints of flows by hopping and hoping.}
 \end{accentframe}
 
 \section{Finding Fixed Points}
@@ -87,18 +150,15 @@
   \frametitle{Chiral Algebras}
   \framesubtitle{The building blocks of a Conformal Field Theory}
   \centering
-  \includegraphics[width=0.6\linewidth]{media/cft-vir-lego.png}
-  \pause
-  \includegraphics[width=0.8\linewidth]{media/vir-primary.pdf}
+  \only<1-2>{\includegraphics[width=0.6\linewidth]{media/cft-vir-lego.png}}%
+  \only<3>{\includegraphics[width=0.6\linewidth]{media/cft-w-lego.png}}%
+  \\[2ex]%
+  \visible<2->{%
+    \only<1-2>{\includegraphics[width=0.7\linewidth]{media/vir-primary.pdf}}%
+    \only<3>{\includegraphics[width=0.7\linewidth]{media/w-primary.pdf}}%
+  }
 \end{frame}
 
-\begin{frame}
-  \frametitle{Chiral Algebras}
-  \framesubtitle{The building blocks of a Conformal Field Theory}
-  \centering
-  \includegraphics[width=0.6\linewidth]{media/cft-w-lego.png}
-  \includegraphics[width=0.8\linewidth]{media/w-primary.pdf}
-\end{frame}
 
 \setbeamercovered{transparent}
 \begin{frame}
@@ -106,8 +166,8 @@
   \framesubtitle{Reframing the problem in terms of Boundary CFT}
   In a theory $\mathcal{T}$ with conformal defect $\alpha$, 
   \begin{figure}
-      \centering
-      \includegraphics[width=0.9\linewidth]{media/folding-defects.pdf}
+    \centering
+    \includegraphics[width=0.9\linewidth]{media/folding-defects.pdf}
   \end{figure}
   \pause
   Similar to how a linear map
@@ -119,7 +179,7 @@
 \begin{frame}
   \frametitle{Characterizing Conformal Defects}
   \framesubtitle{Useful tools}
-  <Insert picture for Invariance under conformal transformations $\implies$ Invariance under translations along it $\implies$ Continuity of parallel momentum across it.>
+  Invariance under translation along the defect implies
   \begin{equation}
     T_{\rm{above}}(z) - \bar T_{\rm{above}}(\bar z) = 
     T_{\rm{below}}(z) - \bar T_{\rm{below}}(\bar z)
@@ -134,17 +194,39 @@
 \begin{frame}
   \frametitle{Characterizing Conformal Defects}
   \framesubtitle{Useful tools}
+  The condition
   \begin{equation}
     (L_n - \bar L_{-n})\ket{\alpha} = 0,
   \end{equation}
-  \begin{itemize}
-      \item Boundary states are built from spinless primaries.
-      \pause
-      \item A basis for which is given by Ishibashi states $|i\rangle\!\rangle$ defined for a spinless primary $i$ by
-      \begin{equation}
-    |i\rangle\!\rangle = \sum_{n} |i,n\rangle \otimes U |i,n\rangle,
-  \end{equation}with $|i,n\rangle$ an orthonormal basis of the $i$ irrep, and $U$ fixed antiunitary map.
-  \end{itemize}
+  implies that...
+
+  \begin{minipage}[t][0.5\textheight][t]{\linewidth}
+    \only<1>{
+      \begin{block}{Fact 1}
+        Boundary states are built with spinless primaries since for $n=0$
+        \begin{equation}
+          (L_0 - \bar L_0) \ket{\alpha} = 0 
+        \end{equation}
+      \end{block}
+    }
+    \only<2>{
+      \begin{block}{Fact 2}
+        A basis is given by \textbf{Ishibashi states} $|i\rangle\!\rangle$ defined for a spinless primary $i$ by
+        \begin{equation}
+          |i\rangle\!\rangle = \sum_{n} |i,n\rangle \otimes U |i,n\rangle,
+        \end{equation}with $|i,n\rangle$ an orthonormal basis of the $i$ irrep, and $U$ fixed antiunitary map.
+      \end{block}
+    }
+    \only<3>{
+      \begin{block}{Fact 3}
+        Therefore each boundary state should be given by 
+        \begin{equation}
+          \ket{\alpha} = \sum_{h_i = \bar h_i}\alpha_i|i\rangle\!\rangle,
+        \end{equation}
+        for some $\alpha_i \in \mathbb{C}$.
+      \end{block}
+    }
+  \end{minipage}
 \end{frame}
 
 \begin{frame}
@@ -152,7 +234,7 @@
   \framesubtitle{Useful tools}
   Therefore each boundary state should be given by 
   \begin{equation}
-      \ket{\alpha} = \sum_{h_i = \bar h_i}\alpha_i|i\rangle\!\rangle,
+    \ket{\alpha} = \sum_{h_i = \bar h_i}\alpha_i|i\rangle\!\rangle,
   \end{equation}
   for some $\alpha_i \in \mathbb{C}$.
 \end{frame}
@@ -162,11 +244,11 @@
   \frametitle{Strategy}
   \framesubtitle{How can we then find fixed points?}
   \begin{itemize}
-      \item \alt<2->{\textit{\color{fg!30}\sout{Calculate $\beta$ functions.}}}{Calculate $\beta$ functions.}
+    \item \alt<2->{\textit{\color{fg!30}\sout{Calculate $\beta$ functions.}}}{Calculate $\beta$ functions.}
       \pause
-      \item Find a way to generate conformal defects.
+    \item Find a way to generate conformal defects.
       \pause
-      \item Use constraints to check which ones could be the fixed point.
+    \item Use constraints to check which ones could be the fixed point.
   \end{itemize}
 \end{frame}
 
@@ -271,8 +353,8 @@
   \frametitle{g-function}
   \framesubtitle{Easy to compute \& a-theorem esque}
   \begin{figure}
-  \centering
-  \includegraphics[width=0.5\linewidth]{media/g-function.pdf}
+    \centering
+    \includegraphics[width=0.5\linewidth]{media/g-function.pdf}
   \end{figure}
   is monotonically decreasing under RG. Universal as a boundary addition to the entropy. At high temperatures
   \begin{equation}
@@ -291,11 +373,11 @@
   \framesubtitle{In the case of minimal models}
   \begin{columns}
     \begin{column}{0.55\textwidth}
-        \begin{itemize}
-            \item We consider perturbations of $D_{1,2}$ under $\phi_{(1,3),0}$ and $\phi_{0,(1,3)}$.
-            \item Other perturbations (e.g. $\phi_{0,h}$) lead to uninteresting topological IR fixed points (since $\phi_{0,h}$ commutes with all $\bar L_n$)
-            \item This preserves defects of the form $L_{(r,1)}$ which in Tricritical Ising give $\mathrm{Ising}$ fusion category.
-        \end{itemize}
+      \begin{itemize}
+        \item We consider perturbations of $D_{1,2}$ under $\phi_{(1,3),0}$ and $\phi_{0,(1,3)}$.
+        \item Other perturbations (e.g. $\phi_{0,h}$) lead to uninteresting topological IR fixed points (since $\phi_{0,h}$ commutes with all $\bar L_n$)
+        \item This preserves defects of the form $L_{(r,1)}$ which in Tricritical Ising give $\mathrm{Ising}$ fusion category.
+      \end{itemize}
     \end{column}
     \begin{column}{0.45\textwidth}
     \end{column}
@@ -325,10 +407,10 @@
   \frametitle{Strategy}
   \framesubtitle{Guesses for Gaugings}
   \begin{itemize}
-      \item $\mathcal{A}, \mathcal{B},$ and $\mathcal{C}$ are (rational) WZW cosets related to $\mathrm{TIM}^2$ by gauging. 
-      \item In subsequent gaugings we can (possibly/hopefully) find smaller algebras under which $\mathrm{TIM}^2$ is rational.
-      \item Pull out Cardy boundaries and use bootstrapped TDLs to obtain more.
-      \item Constrain defects based on $\mathrm{g}$-function preserved symmetry and more.
+    \item $\mathcal{A}, \mathcal{B},$ and $\mathcal{C}$ are (rational) WZW cosets related to $\mathrm{TIM}^2$ by gauging. 
+    \item In subsequent gaugings we can (possibly/hopefully) find smaller algebras under which $\mathrm{TIM}^2$ is rational.
+    \item Pull out Cardy boundaries and use bootstrapped TDLs to obtain more.
+    \item Constrain defects based on $\mathrm{g}$-function preserved symmetry and more.
   \end{itemize}
 \end{frame}
 
