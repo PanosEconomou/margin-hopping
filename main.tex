@@ -1,6 +1,6 @@
 \documentclass[aspectratio=169]{beamer}
 \usetheme{blob}
-\usepackage[normalem]{ulem} 
+\usepackage[normalem]{ulem}
 
 \title{Hopping on the Margins}
 \subtitle{with Yifan Wang, and Quinten Weller}
@@ -202,7 +202,7 @@
 
   \begin{minipage}[t][0.5\textheight][t]{\linewidth}
     \only<1>{
-      \begin{block}{Fact 1}
+      \begin{block}{Fact I}
         Boundary states are built with spinless primaries since for $n=0$
         \begin{equation}
           (L_0 - \bar L_0) \ket{\alpha} = 0 
@@ -210,7 +210,7 @@
       \end{block}
     }
     \only<2>{
-      \begin{block}{Fact 2}
+      \begin{block}{Fact II}
         A basis is given by \textbf{Ishibashi states} $|i\rangle\!\rangle$ defined for a spinless primary $i$ by
         \begin{equation}
           |i\rangle\!\rangle = \sum_{n} |i,n\rangle \otimes U |i,n\rangle,
@@ -218,8 +218,8 @@
       \end{block}
     }
     \only<3>{
-      \begin{block}{Fact 3}
-        Therefore each boundary state should be given by 
+      \begin{block}{Fact III}
+        Each boundary state is given by 
         \begin{equation}
           \ket{\alpha} = \sum_{h_i = \bar h_i}\alpha_i|i\rangle\!\rangle,
         \end{equation}
@@ -230,26 +230,22 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Characterizing Conformal Defects}
-  \framesubtitle{Useful tools}
-  Therefore each boundary state should be given by 
-  \begin{equation}
-    \ket{\alpha} = \sum_{h_i = \bar h_i}\alpha_i|i\rangle\!\rangle,
-  \end{equation}
-  for some $\alpha_i \in \mathbb{C}$.
-\end{frame}
-
-\setbeamercovered{invisible}
-\begin{frame}
   \frametitle{Strategy}
   \framesubtitle{How can we then find fixed points?}
-  \begin{itemize}
-    \item \alt<2->{\textit{\color{fg!30}\sout{Calculate $\beta$ functions.}}}{Calculate $\beta$ functions.}
-      \pause
-    \item Find a way to generate conformal defects.
-      \pause
-    \item Use constraints to check which ones could be the fixed point.
-  \end{itemize}
+  \begin{columns}[t]
+    \begin{column}{0.35\textwidth}
+      \centering
+      \includegraphics[width=0.2\paperwidth, trim=0 0 0 2pt, clip]{media/widget-calculate.png}\\[1ex]
+      \footnotesize Find a way to generate conformal defects.
+    \end{column}
+    \pause
+    \begin{column}{0.35\textwidth}
+      \centering
+      \only<1>{\transparent{0.3}\includegraphics[width=0.2\paperwidth, trim=0 0 0 2pt, clip]{media/widget-constrain.png}\\[1ex]}%
+      \only<2>{\includegraphics[width=0.2\paperwidth, trim=0 0 0 2pt, clip]{media/widget-constrain.png}\\[1ex]}%
+      \footnotesize Use constraints to check which ones could be the fixed point.
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{accentframe}{Finding Defect Builders}{A story of cheating using rational theories and gauging.}
@@ -260,11 +256,14 @@
   \frametitle{Cardy Trick}
   \framesubtitle{A cheeky way to generate boundaries}
   \centering
-  \includegraphics[width=0.9\linewidth]{media/open-closed-string-duality.pdf}
+  \includegraphics[width=0.8\linewidth]{media/open-closed-string-duality.pdf}
   \pause
-  \begin{equation}
-    \langle \alpha, e^{-\pi L H_{\tau}} \beta\rangle = Z(L) = \mathrm{Tr\,}_{\mathbb{H}_{\alpha \beta}}e^{- 2\pi H_\sigma}
-  \end{equation}
+  \begin{block}{Cardy's Condition}
+    Equating the channels we have
+    \begin{equation}
+      \langle \alpha, e^{-\pi L H_{\tau}} \beta\rangle = Z(L) = \mathrm{Tr\,}_{\mathbb{H}_{\alpha \beta}}e^{- 2\pi H_\sigma}
+    \end{equation}
+  \end{block}
 \end{frame}
 
 \begin{frame}
@@ -316,15 +315,18 @@
 \begin{frame}
   \frametitle{Cardy Trick}
   \framesubtitle{A cheeky way to generate boundaries}
-  Matching the two conditions and expressing into characters we find that
+  \begin{block}{Cardy's Condition}
+    Matching the two conditions and expressing into characters we find that
+    \begin{equation}
+      S^{ji} \alpha_j \beta_j \chi_i(q) = n_{\alpha \beta}^{i} \chi_i(q)
+    \end{equation}
+  \end{block}
+  \pause
+  Which has solutions for a diagonal CFT labelled by the primaries $\alpha$
   \begin{equation}
-    S^{ji} \alpha_j \beta_j \chi_i(q) = n_{\alpha \beta}^{i} \chi_i(q)
+    \alpha_j = \frac{S_{\alpha j}}{\sqrt{S_{\alpha 1}}}.
   \end{equation}
-  Which has solutions for a diagonal CFT
-  \begin{equation}
-    \alpha_j = \frac{S_{\alpha j}}{\sqrt{S_{\alpha 1}}},
-  \end{equation} 
-  where $\alpha$ labels a primary. These are also a basis of simple physical boundaries. 
+  These are also a basis of simple physical boundaries. 
 \end{frame}
 
 \begin{frame}

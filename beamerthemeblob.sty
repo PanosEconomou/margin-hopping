@@ -6,6 +6,7 @@
 \usepackage{mathtools}
 \usepackage{physics}
 \usepackage[absolute,overlay]{textpos}
+\usepackage{transparent}
 
 \ProvidesPackage{beamerthemeblob}
 
@@ -25,30 +26,38 @@
 \definecolor{accent}{HTML}{7FBAC7}
 \definecolor{dark}{HTML}{000000}
 
+% some derivatives
+\colorlet{accentlight}{accent!50!light}
+\colorlet{accentdark}{accent!50!dark}
+
 % Now set up the colors here 
-\setbeamercolor{normal text}      {fg=dark}
-\setbeamercolor{accent text}      {fg=accent}
-\setbeamercolor{invert text}      {fg=light}
-\setbeamercolor{contrast text}    {fg=dark}   % Text that contrasts the accent
+\setbeamercolor{normal text}          {fg=dark}
+\setbeamercolor{accent text}          {fg=accent}
+\setbeamercolor{invert text}          {fg=light}
+\setbeamercolor{contrast text}        {fg=dark}   % Text that contrasts the accent
 
 % Title page colors 
-\setbeamercolor{title}            {fg=dark}
-\setbeamercolor{subtitle}         {fg=dark}
-\setbeamercolor{author}           {fg=dark}
-\setbeamercolor{institute}        {fg=dark}
-\setbeamercolor{date}             {fg=dark}
+\setbeamercolor{title}                {fg=dark}
+\setbeamercolor{subtitle}             {fg=dark}
+\setbeamercolor{author}               {fg=dark}
+\setbeamercolor{institute}            {fg=dark}
+\setbeamercolor{date}                 {fg=dark}
 
 % Background colors
-\setbeamercolor{background}       {bg=light}
-\setbeamercolor{invert background}{bg=dark}
-\setbeamercolor{accent background}{bg=accent}
-\setbeamercolor{background canvas}{bg=light}
+\setbeamercolor{background}           {bg=light}
+\setbeamercolor{invert background}    {bg=dark}
+\setbeamercolor{accent background}    {bg=accent}
+\setbeamercolor{background canvas}    {bg=light}
 
-% Colors for typical slide elements 
-\setbeamercolor{frametitle}       {fg=dark}
-\setbeamercolor{framesubtitle}    {fg=dark}
-\setbeamercolor{section in head/foot}{fg=dark}
-\setbeamercolor{structure}        {fg=accent}
+% Colors for typical slide element    s 
+\setbeamercolor{frametitle}           {fg=dark}
+\setbeamercolor{framesubtitle}        {fg=dark}
+\setbeamercolor{section in head/foot} {fg=dark}
+\setbeamercolor{structure}            {fg=accent}
+
+% Theorem boxes and whatnot
+\setbeamercolor{block title}          {fg=dark,   bg=accentlight}
+\setbeamercolor{block body}           {fg=dark,   bg=accent!15!light}
 
 % ══════════════════════════════════════════
 % Fonts
@@ -65,6 +74,10 @@
 
 % Footer
 \setbeamerfont{footline}          {size=\tiny}
+
+% Boxes
+\setbeamerfont{block title}       {size=\normalsize,    series=\bfseries, shape=\itshape}
+\setbeamerfont{block body}        {size=\normalsize,    series=\mdseries}
 
 % ══════════════════════════════════════════
 % Title Page
