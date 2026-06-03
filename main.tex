@@ -32,7 +32,7 @@
     \includegraphics[width=0.8\linewidth]{media/lattice.png}
   \end{figure}
   \begin{equation*}
-      H = -J\sum_{n} x_nx_{n+1} - h\sum_{n} z_n
+    H = -J\sum_{n} x_nx_{n+1} - h\sum_{n} z_n
   \end{equation*}
 \end{frame}
 
@@ -44,7 +44,7 @@
     \includegraphics[width=0.8\linewidth]{media/lattice-defect.png}
   \end{figure}
   \begin{equation*}
-      H = -J\sum_{n} x_nx_{n+1} - h\sum_{n}z_n + \delta H_{01}
+    H = -J\sum_{n} x_nx_{n+1} - h\sum_{n}z_n + \delta H_{01}
   \end{equation*}
 \end{frame}
 
@@ -56,7 +56,7 @@
     \includegraphics[width=0.8\linewidth]{media/lattice-defect-full.png}
   \end{figure}
   \begin{equation*}
-      H = -J\sum_{n} x_nx_{n+1} - h\sum_{n}z_n + \delta H_{01}
+    H = -J\sum_{n} x_nx_{n+1} - h\sum_{n}z_n + \delta H_{01}
   \end{equation*}
 \end{frame}
 
@@ -68,8 +68,30 @@
     \includegraphics[width=0.8\linewidth]{media/lattice-defect-zoom-out.png}
   \end{figure}
   \begin{equation*}
-      H = -J\sum_{n} x_nx_{n+1} - h\sum_{n}z_n + \delta H_{01}
+    H = -J\sum_{n} x_nx_{n+1} - h\sum_{n}z_n + \delta H_{01}
   \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Defects in the wild}
+  \framesubtitle{Other cool places that we can find them}
+  \begin{columns}[t]
+    \begin{column}{0.28\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{media/luttinger}
+      \footnotesize Impurities/Boundaries in spin chains
+    \end{column}
+    \begin{column}{0.28\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{media/ofw}
+      \footnotesize AdS/CFT End of World (?) branes
+    \end{column}
+    \begin{column}{0.28\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{media/bps}
+      \footnotesize BPS Branes in String Theory
+    \end{column}
+  \end{columns}
 \end{frame}
 % ════════════════════════════════════════════════════════════════
 
@@ -388,7 +410,7 @@
         \footnotesize
         Fold a \textbf{CFT}
         \[
-        \mathcal{T} \otimes \overline{\mathcal{T}}
+          \mathcal{T} \otimes \overline{\mathcal{T}}
         \]
       \end{block}
     \end{column}
@@ -396,9 +418,9 @@
     \begin{column}{0.22\textwidth}
       \begin{block}{Step II}
         \footnotesize
-        Make it \textbf{rational}
+        Make it \textbf{diagonal}
         \[
-        \mathrm{Vir} \subset \mathcal{W}
+          \mathrm{Vir} \subset \mathcal{W}
         \]
       \end{block}
     \end{column}
@@ -408,28 +430,28 @@
         \footnotesize
         \textbf{Cardy States}
         \[
-        \alpha_j = \dfrac{S_{\alpha j}}{\sqrt{S_{\alpha 0}}}
+          \alpha_j = \dfrac{S_{\alpha j}}{\sqrt{S_{\alpha 0}}}
         \]
       \end{block}
     \end{column}
     \pause
     \only<1-4>{%
-    \begin{column}{0.22\textwidth}
-      \begin{block}{Step IV}
-        \footnotesize
-        \textbf{Reflect}\par 
-        Are we done?
-      \end{block}
-    \end{column}
+      \begin{column}{0.22\textwidth}
+        \begin{block}{Step IV}
+          \footnotesize
+          \textbf{Reflect}\par 
+          Are we done?
+        \end{block}
+      \end{column}
     }%
     \only<5>{%
-    \begin{column}{0.22\textwidth}
-      \begin{alertblock}{Step IV}
-        \footnotesize
-        \textbf{Reflect}\par 
-        Are we done? \textbf{NO!}
-      \end{alertblock}
-    \end{column}
+      \begin{column}{0.22\textwidth}
+        \begin{alertblock}{Step IV}
+          \footnotesize
+          \textbf{Reflect}\par 
+          Are we done? \textbf{NO!}
+        \end{alertblock}
+      \end{column}
     }%
   \end{columns}
   \vfill
@@ -441,11 +463,11 @@
   Diagonal Cardy boundaries preserve too many symmetries. But conformal boundaries don't have to.\\[1ex]
   \pause
   \begin{block}{A Fix}
-  Fuse with topological defects $\mathcal{L}$ that break the big symmetry and get more boundaries
+    Fuse with topological defects $\mathcal{L}$ that break the big symmetry and get more boundaries
     \begin{equation}
       \mathcal{L}\ket{\alpha} = n_{\mathcal{L}\alpha}^{\beta} \ket{\beta},
     \end{equation}
-  for $\beta$ simple physical boundary, $n_{\mathcal{L} \alpha}^\beta \in \mathbb{Z}_{\geq 0}$.
+    for $\beta$ simple physical boundary, $n_{\mathcal{L} \alpha}^\beta \in \mathbb{Z}_{\geq 0}$.
   \end{block}
   To do this, we use modular bootstrap to come up with topological lines.
 \end{frame}
@@ -457,7 +479,7 @@
   \begin{block}{Cool fact I}
     After gauging a discrete symmetry $G$ in theory $\mathcal{T}$ results in identifying a dual symmetry $\hat G$ in $\mathcal{T}{/}G$ such that
     \[
-    (\mathcal{T}{/}G){/}\hat G = \mathcal{T}.
+      (\mathcal{T}{/}G){/}\hat G = \mathcal{T}.
     \]
   \end{block}
 \end{frame}
@@ -472,7 +494,7 @@
   \begin{block}{New Approach!}
     Find boundaries after gauging and pull them back via the operations in $\hat G$. For $\hat G$ a \textit{group} 
     \[
-    \ket{\alpha}_{\mathcal{T}} = \sum_{g \in \hat G} \frac{g}{|\hat G|}\ket{\alpha}_{\mathcal{T}{/}G}
+      \ket{\alpha}_{\mathcal{T}} = \sum_{g \in \hat G} \frac{g}{|\hat G|}\ket{\alpha}_{\mathcal{T}{/}G}
     \]
   \end{block}
   \vspace{5ex}
@@ -502,7 +524,7 @@
   \begin{block}{Cool fact II {\footnotesize \textmd{AKA Anomaly Matching}}}
     If a symmetry operator $\mathcal{L}$ commutes with a defect perturbation $\varphi$, then the symmetry is preserved along flows.
     \[
-    [\mathcal{L}, \phi] = 0 \implies [\mathcal{L}, e^{\lambda_\phi \int_D \phi}] = 0.
+      [\mathcal{L}, \phi] = 0 \implies [\mathcal{L}, e^{\lambda_\phi \int_D \phi}] = 0.
     \]
   \end{block}
 \end{frame}
@@ -563,7 +585,7 @@
   \frametitle{Strategy}
   \framesubtitle{Guesses for Gaugings}
   \begin{block}{Lukewarm Fact}
-      Folded Tricritical Ising ($\mathrm{TIM}^2$) has $c = \frac{7}{5}$ and is rational under $\mathrm{Vir}^2$.
+    Folded Tricritical Ising ($\mathrm{TIM}^2$) has $c = \frac{7}{5}$ and is rational under $\mathrm{Vir}^2$.
   \end{block}
   \pause
   Known rational CFTs with $c = \frac{7}{5}$ are the chiral algebras of:
@@ -578,19 +600,16 @@
   Look at all these gaugings!
   \begin{align*}
         &\mathrm{TIM}^2  \xrightarrow[]{\mathrm{id} \oplus \eta_1 \eta_2} \mathcal{B}_{DE}\,,\  
-\mathrm{TIM}^2  \xrightarrow[]{\mathrm{id} \oplus S} \mathcal{A}_{D}\,,\  \mathrm{TIM}^2  \xrightarrow[]{\mathrm{id} \oplus S \oplus \eta_1\eta_2\oplus S \eta_1\eta_2} \mathcal{A}_{A}
-\\
-&\mathcal{B}_{AA} \xrightarrow[]{\mathrm{id}   \oplus \mathcal{L}_{(0,0,3)}} \mathcal{B}_{AE}\,,\  
-\mathrm{TIM}^2  \xrightarrow[]{(\mathrm{id} \oplus S \oplus \eta_1\eta_2\oplus S \eta_1\eta_2)_\omega} \mathcal{B}_{AE}\,,\  
-\mathcal{B}_{AE} \xrightarrow[]{\mathrm{id} \oplus \mathcal{L}_{(0,4,0)}}\mathcal{B}_{DE} \\ 
-&\mathcal{B}_{AA} \xrightarrow[]{\mathrm{id} \oplus \mathcal{L}_{(0,4,0)}}\mathcal{B}_{DA} \,, \  \mathcal{C} \xrightarrow[]{\mathrm{id} \oplus \mathcal{L}_{2}\,,\ \mathrm{id} \oplus \mathcal{L}_{3}} \mathcal{C}' \,, \  \mathcal{C} \xrightarrow[]{\mathrm{id} \oplus \mathcal{L}_{8}} \mathcal{B}_{DE}\,, \  \mathcal{A}_{A} \xrightarrow[]{\mathbb{Z}_2}\mathcal{A}_{D}
+        \mathrm{TIM}^2  \xrightarrow[]{\mathrm{id} \oplus S} \mathcal{A}_{D}\,,\  \mathrm{TIM}^2  \xrightarrow[]{\mathrm{id} \oplus S \oplus \eta_1\eta_2\oplus S \eta_1\eta_2} \mathcal{A}_{A}\\
+        &\mathcal{B}_{AA} \xrightarrow[]{\mathrm{id}   \oplus \mathcal{L}_{(0,0,3)}} \mathcal{B}_{AE}\,,\ \mathrm{TIM}^2  \xrightarrow[]{(\mathrm{id} \oplus S \oplus \eta_1\eta_2\oplus S \eta_1\eta_2)_\omega} \mathcal{B}_{AE}\,,\  
+        \mathcal{B}_{AE} \xrightarrow[]{\mathrm{id} \oplus \mathcal{L}_{(0,4,0)}}\mathcal{B}_{DE} \\ &\mathcal{B}_{AA} \xrightarrow[]{\mathrm{id} \oplus \mathcal{L}_{(0,4,0)}}\mathcal{B}_{DA} \,, \  \mathcal{C} \xrightarrow[]{\mathrm{id} \oplus \mathcal{L}_{2}\,,\ \mathrm{id} \oplus \mathcal{L}_{3}} \mathcal{C}' \,, \  \mathcal{C} \xrightarrow[]{\mathrm{id} \oplus \mathcal{L}_{8}} \mathcal{B}_{DE}\,, \  \mathcal{A}_{A} \xrightarrow[]{\mathbb{Z}_2}\mathcal{A}_{D}
   \end{align*}%
   \begin{itemize}%
     \pause%
     \item We verified them numerically (and in some cases analytically).
-    \pause
+      \pause
     \item Found Cardy states for the diagonal ones.
-    \pause
+      \pause
     \item Calculated Pullbacks of characters. 
   \end{itemize}
 \end{frame}
@@ -599,16 +618,23 @@
   \frametitle{Bootstrap}
   \framesubtitle{Can't have a 2D CFT project without bootstrap}  
   We developed a solver for the modular bootstrap that uses $S,T,Z$ data to solve for the \textbf{all TDLs} in constrained rational CFTs.
-  
-  \only<1>{<insert mathematica photo>}
-  \only<2>{
-  We used this for
-  \begin{enumerate}
-      \item Calculating TDLs for nondiagonal rational chiral algebras in the previous models
-      \item Obtaining over 400 Conformal defects in these theories (some of which we pulled back)
-      \item Calculated candidate defects that match numerical predictions for $\mathrm{C}$
-  \end{enumerate}
-  }
+  \vfill
+  \begin{minipage}[][0.4\textheight][t]{\textwidth}
+    \only<1>{
+      \begin{figure} 
+        \centering
+        \includegraphics[width=\linewidth]{media/twisted-sectors}
+      \end{figure}
+    }
+    \only<2>{
+      We used this for
+      \begin{enumerate}
+        \item Calculating TDLs for nondiagonal rational chiral algebras in the previous models
+        \item Obtaining over 400 Conformal defects in these theories (some of which we pulled back)
+        \item Calculated candidate defects that match numerical predictions for $\mathrm{C}$
+      \end{enumerate}
+    }
+  \end{minipage}
 \end{frame}
 % ════════════════════════════════════════════════════════════════
 
