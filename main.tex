@@ -71,28 +71,6 @@
     H = -J\sum_{n} x_nx_{n+1} - h\sum_{n}z_n + \delta H_{01}
   \end{equation*}
 \end{frame}
-
-\begin{frame}
-  \frametitle{Defects in the wild}
-  \framesubtitle{Other cool places that we can find them}
-  \begin{columns}[t]
-    \begin{column}{0.28\linewidth}
-      \centering
-      \includegraphics[width=\linewidth]{media/luttinger}
-      \footnotesize Impurities/Boundaries in spin chains
-    \end{column}
-    \begin{column}{0.28\linewidth}
-      \centering
-      \includegraphics[width=\linewidth]{media/ofw}
-      \footnotesize AdS/CFT End of World (?) branes
-    \end{column}
-    \begin{column}{0.28\linewidth}
-      \centering
-      \includegraphics[width=\linewidth]{media/bps}
-      \footnotesize BPS Branes in String Theory
-    \end{column}
-  \end{columns}
-\end{frame}
 % ════════════════════════════════════════════════════════════════
 
 
@@ -126,9 +104,9 @@
         \begin{equation*}%
           \only<1>{S = S_D}%
           \only<2>{S = S_D + \lambda_{\phi}\int_{D} \phi(z) dz}%
-          \only<3>{S = S_D + \lambda_{\bar \phi}\int_{D} \bar \phi(z) dz}%
-          \only<4>{S = S_D + \lambda\int_{D} \phi(z) + \bar \phi(z) dz}%
-          \only<5>{S = S_D + \lambda_{\phi}\int_{D} \phi(z) dz + \lambda_{\bar \phi}\int_{D} \bar \phi(z) dz}%
+          \only<3>{S = S_D + \lambda_{\bar \phi}\int_{D} \bar \phi(\bar z) dz}%
+          \only<4>{S = S_D + \lambda\int_{D} \phi(z) + \bar \phi(\bar z) dz}%
+          \only<5>{S = S_D + \lambda_{\phi}\int_{D} \phi(z) dz + \lambda_{\bar \phi}\int_{D} \bar \phi(\bar z) dz}%
         \end{equation*}
         % \vspace{0pt plus 2fill}%
         \vfill
@@ -137,6 +115,29 @@
       \end{minipage}
     \end{column}
     \hspace{0.07\paperwidth}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Defects in the wild}
+  \framesubtitle{Other cool places that we can find them}
+  \begin{columns}[t]
+    \begin{column}{0.28\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{media/luttinger}
+      \footnotesize Impurities/Boundaries in spin chains
+    \end{column}
+    \begin{column}{0.28\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{media/ofw}
+      \footnotesize AdS/CFT End of World (?) branes
+    \end{column}
+    \begin{column}{0.28\linewidth}
+      \centering
+      \includegraphics[width=\linewidth]{media/bps}
+      \footnotesize BPS Branes in String Theory
+    \end{column}
   \end{columns}
 \end{frame}
 % ════════════════════════════════════════════════════════════════
