@@ -23,12 +23,14 @@
 % ══════════════════════════════════════════
 % First define some cool colors
 \definecolor{light}{HTML}{F7F7F7}
-\definecolor{accent}{HTML}{7FBAC7}
 \definecolor{dark}{HTML}{000000}
+\definecolor{accent}{HTML}{7FBAC7}
+\definecolor{alert}{HTML}{E66447}
 
 % some derivatives
 \colorlet{accentlight}{accent!50!light}
 \colorlet{accentdark}{accent!50!dark}
+\colorlet{alertlight}{alert!50!light}
 
 % Now set up the colors here 
 \setbeamercolor{normal text}          {fg=dark}
@@ -49,7 +51,7 @@
 \setbeamercolor{accent background}    {bg=accent}
 \setbeamercolor{background canvas}    {bg=light}
 
-% Colors for typical slide element    s 
+% Colors for typical slide elements 
 \setbeamercolor{frametitle}           {fg=dark}
 \setbeamercolor{framesubtitle}        {fg=dark}
 \setbeamercolor{section in head/foot} {fg=dark}
@@ -58,6 +60,8 @@
 % Theorem boxes and whatnot
 \setbeamercolor{block title}          {fg=dark,   bg=accentlight}
 \setbeamercolor{block body}           {fg=dark,   bg=accent!15!light}
+\setbeamercolor{block title alerted}  {fg=dark,   bg=alertlight}
+\setbeamercolor{block body alerted}   {fg=dark,   bg=alert!15!light}
 
 % ══════════════════════════════════════════
 % Fonts
